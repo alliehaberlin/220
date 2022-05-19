@@ -68,6 +68,6 @@ DELETE from orders where id in (9, 10, 11, 12);
 DELETE from customers where id in (3, 4);
 DELETE from studios where id in (1, 2, 3, 4);
 
-SELECT customers.firstname, customers.lastname, studios.address
+SELECT orders.product, orders.cost, customers.firstname
 FROM customers
-INNER JOIN studios ON studios.address = customers.id;
+INNER JOIN orders ON customers.id = orders.customerId;

@@ -19,7 +19,8 @@ CREATE TABLE Actors (
     id int NOT NULL UNIQUE AUTO_INCREMENT,
     first_name varchar(20),
     last_name varchar(20),
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    genre varchar(20)
 );
 
 CREATE TABLE movie_actor_assoc (
@@ -34,10 +35,9 @@ INSERT INTO Movies (title, release_year, genre, directorsId) VALUES ('Ted 2', 20
 INSERT INTO Directors (first_name, last_name) VALUES ('steven', 'spielberg');
 INSERT INTO Directors (first_name, last_name) VALUES ('seth', 'macfarlane');
 
-INSERT INTO Actors (first_name, last_name) VALUES ('mark', 'wahlberg');
-INSERT INTO Actors (first_name, last_name) VALUES ('roy', 'scheider');
+INSERT INTO Actors (first_name, last_name, genre) VALUES ('mark', 'wahlberg', 'comedy');
+INSERT INTO Actors (first_name, last_name, genre) VALUES ('roy', 'scheider', 'thriller');
 
 INSERT INTO movie_actor_assoc (movieId, actorId) VALUES (1, 2);
 INSERT INTO movie_actor_assoc (movieId, actorId) VALUES (2, 1);
-
 
